@@ -18,6 +18,6 @@ for file in filenames:
 	for category in filenames[file]:
 		for i, line in enumerate(lines):
 			if category in line:
-				if line[0] == '\x00' and lines[i+2][0] == "D":
+				if line[0] == '\x00' and lines[i+2][0].isalpha():
 					export[make_pretty(line)] = {"body": make_pretty(lines[i+2])}
 	print(export)
